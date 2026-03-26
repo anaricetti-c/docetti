@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Docetti - Painel de Encomendas</title>
+    <link rel="stylesheet" href="/static/style.css">
+    </head>
+<body>
+
+    <div class="dashboard-card">
+        
+        <header class="dashboard-header">
+            <div class="logo-section">
+                <svg class="logo-icon" viewBox="0 0 100 100">
+                    <path fill="currentColor" d="M50 15c-5 0-10 5-10 10 0 5 5 10 10 10s10-5 10-10c0-5-5-10-10-10zM50 35c10 0 18 8 18 18v2c0 2-2 4-4 4H36c-2 0-4-2-4-4v-2c0-10 8-18 18-18z"/>
+                    <path fill="currentColor" d="M30 40c-5 0-10 5-10 10 0 5 5 10 10 10s10-5 10-10c0-5-5-10-10-10zM70 40c-5 0-10 5-10 10 0 5 5 10 10 10s10-5 10-10c0-5-5-10-10-10zM35 70c-5 0-10 5-10 10 0 5 5 10 10 10s10-5 10-10c0-5-5-10-10-10zM65 70c-5 0-10 5-10 10 0 5 5 10 10 10s10-5 10-10c0-5-5-10-10-10z"/>
+                </svg>
+                <h2>Encomendas recebidas</h2>
+            </div>
+            <div class="user-section">
+                <span class="user-name">nome Usuário</span>
+                <div class="user-avatar">?</div> </div>
+        </header>
+
+        <div class="dashboard-content">
+            
+            <div class="actions-bar">
+                <div class="left-actions">
+                    <button class="btn-action">Novo +</button>
+                    <button class="btn-action">Editar</button>
+                    <button class="btn-action">Excluir</button>
+                    <button class="btn-action" onclick="baixarRelatorio()">Relatório</button>
+                </div>
+                <div class="right-actions">
+                    <button class="btn-action">Pesquisar</button>
+                </div>
+            </div>
+
+            <table id="tabela-encomendas">
+                <thead>
+                    <tr>
+                        <th style="width: 40px;"></th> <th>Cliente</th>
+                        <th>Entrega</th>
+                        <th>Quantidade</th>
+                        <th>Sabores</th>
+                        <th>Valor</th>
+                        <th>Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="td-checkbox"></td>
+                        <td>Leandro</td>
+                        <td>12/05/2026</td>
+                        <td>50</td>
+                        <td>Beijinho, Brigadeiro</td>
+                        <td>R$ 75,00</td>
+                        <td>R$ 75,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="td-checkbox"></td>
+                        <td>Diego</td>
+                        <td>15/05/2026</td>
+                        <td>100</td>
+                        <td>Ninho, Nesquik, Cappucino</td>
+                        <td>R$ 150,00</td>
+                        <td>R$ 100,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="td-checkbox"></td>
+                        <td>Gabrielle</td>
+                        <td>18/05/2026</td>
+                        <td>30</td>
+                        <td>Brigadeiro</td>
+                        <td>R$ 45,00</td>
+                        <td>R$ 45,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="td-checkbox"></td>
+                        <td>Gisele</td>
+                        <td>20/05/2026</td>
+                        <td>20</td>
+                        <td>Ninho</td>
+                        <td>R$ 30,00</td>
+                        <td>R$ 0,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="td-checkbox"></td>
+                        <td>Carolina</td>
+                        <td>22/05/2026</td>
+                        <td>10</td>
+                        <td>Beijinho</td>
+                        <td>R$ 15,00</td>
+                        <td>R$ 0,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
+<script>
+function baixarRelatorio() {
+    const link = document.createElement("a");
+    link.href = "/relatorio_docetti.pdf";
+    link.download = "/relatorio_docetti.pdf";
+    link.click();
+}
+</script>

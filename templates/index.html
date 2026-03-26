@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docetti - Login</title>
+
+
+<!-- CSS correto -->
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+
+<div class="login-wrapper">
+    
+    <div class="login-left">
+        <div class="logo-circle big-logo">
+            <h1>Docetti</h1>
+        </div>
+    </div>
+
+    <div class="login-right">
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label class="docetti-label">Login</label>
+                <input type="text" name="usuario" class="docetti-input" required>
+            </div>
+
+            <div class="form-group">
+                <label class="docetti-label">Senha</label>
+                <input type="password" name="senha" class="docetti-input" required>
+            </div>
+
+            <button type="submit" class="btn-entrar">Entrar</button>
+
+        </form>
+
+        <!-- erro -->
+        <p style="color: #A06060; margin-top: 15px; font-weight: bold; text-align: center;">
+            Usuário ou senha incorretos!
+        </p>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

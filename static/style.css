@@ -1,0 +1,268 @@
+/* Cores baseadas no design Docetti */
+:root {
+    --bg-rosa-claro: #FFE4E1; /* Fundo principal */
+    --bg-conteudo: #FFF0F0; /* Fundo do card interno */
+    --rosa-circulo: #E6A8A8; /* Botões e círculo de usuário */
+    --rosa-hover: #D89898;  /* Efeito de hover */
+    --texto-marrom: #A06060; /* Labels e texto secundário */
+    --branco: #ffffff;
+}
+
+body {
+    background-color: var(--bg-rosa-claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Alinha no topo */
+    height: 100vh;
+    margin: 0;
+    padding-top: 50px;
+}
+
+/* O Logo Circular (da tela de login, mantido aqui para referência) */
+.logo-circle {
+    background-color: var(--rosa-circulo);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-circle h1 {
+    color: var(--branco);
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+/* --- DESIGN DO DASHBOARD (PAINEL DE ENCOMENDAS) --- */
+
+.dashboard-card {
+    background: var(--branco);
+    width: 90%;
+    max-width: 1000px;
+    padding: 0; /* Padding interno será gerenciado pelos sub-elementos */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden; /* Garante que o header arredondado funcione */
+}
+
+/* Cabeçalho do Dashboard */
+.dashboard-header {
+    background-color: var(--bg-conteudo);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(160, 96, 96, 0.1);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--rosa-circulo);
+}
+
+.title-section h2 {
+    color: var(--texto-marrom);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    color: var(--texto-marrom);
+    font-weight: bold;
+}
+
+.user-avatar {
+    background-color: var(--rosa-circulo);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    font-weight: bold;
+}
+
+/* Área de Ações e Tabela */
+.dashboard-content {
+    background-color: var(--bg-conteudo);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-actions, .right-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.right-actions {
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+/* Botões Arredondados */
+.btn-action {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    background-color: var(--rosa-circulo);
+    color: var(--branco);
+    text-align: center;
+}
+
+.btn-action:hover {
+    background-color: var(--rosa-hover);
+}
+
+/* Tabela de Encomendas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    color: var(--texto-marrom);
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Checkboxes da Tabela */
+td .td-checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 5px; /* Não funciona muito bem no Chrome, mas ajuda */
+    border: 1px solid var(--texto-marrom);
+}
+
+/* Zebra Striping (Linhas alternadas) */
+tbody tr:nth-child(odd) {
+    background-color: var(--branco);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5); /* Leve variação para zebra */
+}
+
+/* --- ESTILO ESPECÍFICO DA TELA DE LOGIN --- */
+
+/* Contêiner principal Flexbox */
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    background-color: #FFE4E1; /* Fundo rosa claro */
+    padding: 80px;
+    border-radius: 40px;
+}
+
+/* Logo (Mantido grande) */
+.big-logo {
+    width: 280px !important;
+    height: 280px !important;
+    background-color: #E6A8A8 !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+}
+
+.big-logo h1 {
+    color: white;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 5.5rem;
+    margin: 0;
+}
+
+/* Lado Direito - O contêiner do formulário */
+.login-right {
+    width: 350px; /* Largura total do formulário */
+    display: flex;
+    flex-direction: column; /* Alinha elementos verticalmente */
+}
+
+/* Labels */
+.docetti-label {
+    color: #A06060; /* Marrom rosado */
+    font-size: 1.5rem; /* Ajustado para ficar proporcional */
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Inputs 'Pílula' (O Design que você queria manter) */
+.docetti-input {
+    width: 100%; /* Ocupa toda a largura de .login-right */
+    height: 60px; /* Levemente ajustado para proporcionalidade */
+    background-color: #E6A8A8; /* Rosa escuro */
+    border: none;
+    border-radius: 30px; /* Metade da altura para formato pílula */
+    padding: 0 20px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    outline: none;
+    margin-bottom: 25px;
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+/* --- A MUDANÇA SOLICITADA: BOTÃO LAGO --- */
+.btn-entrar {
+    width: 100%; /* Força o botão a ter a mesma largura que .login-right (e os inputs) */
+    height: 60px; /* Mesma altura dos inputs para simetria */
+    background-color: #A06060; /* Cor marrom do texto/botão da imagem */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Formato pílula igual aos inputs */
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Espaço após o último input */
+}
+
+.btn-entrar:hover {
+    background-color: #8c5353; /* Feedback visual no hover */
+    transform: translateY(-2px); /* Leve elevação */
+    box-shadow: 0 5px 15px rgba(160, 96, 96, 0.3);
+}
+
+/* Garante que o Dashboard não seja afetado */
+.dashboard-card {
+    /* ... regras anteriores do dashboard ... */
+}
